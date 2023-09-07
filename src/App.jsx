@@ -1,33 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Home from './components/Home';
+import Navigation from './components/Nav';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
 import './App.css'
+import { Routes,Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <header className="home-header">
+        <img className="logo" 
+        src="https://previews.123rf.com/images/wikagraphic/wikagraphic2011/wikagraphic201115477/160139588-letter-ds-logo-with-colorful-splash-background-letter-combination-logo-design-for-creative-industry.jpg"/>
+        
+        <h1>DIVINESHIA SHARON</h1> 
+    <Navigation/>
+    </header>
+    
+      
+      <Routes>
+        <Route path ="/" element ={<Home/>}/>
+        <Route path ="/About" element ={<About/>}/>
+        <Route path ="/Portfolio" element ={<Portfolio/>}/>
+      </Routes>
     </>
   )
 }
